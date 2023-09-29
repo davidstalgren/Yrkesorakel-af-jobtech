@@ -44,9 +44,9 @@ export const getSCBStatistics = async (ssyk: string) => {
       format: 'json',
     },
   };
-
+  const SCB_URL = import.meta.env.DEV ? PROXY_URL + BASE_URL : BASE_URL;
   const response = await post<IScbResponse, IScbRequest>(
-    `${PROXY_URL}${BASE_URL}`,
+    SCB_URL,
     requestBody
   );
 
